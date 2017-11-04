@@ -1,8 +1,10 @@
-<input type="text" class="input" placeholder="Address..." #inputElement>
-<div class="map" #mapElement ></div>
+<app-spinner [hidden]="!loading"></app-spinner>
+<input type="text" class="input" placeholder="Address..." #inputElement [hidden]="loading">
+<div class="map" #mapElement [hidden]="loading"></div>
 
 <div class="col-sm-6 row" >
-  <table class="table" *ngIf="weather">
+  <app-spinner [hidden]="weather && !loading"></app-spinner>
+  <table class="table" *ngIf="weather" [hidden]="!weather">
     <thead>
     <tr>
       <th>Latitude</th>

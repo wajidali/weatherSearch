@@ -12,6 +12,7 @@ import {GoogleMapsService} from 'google-maps-angular2';
 })
 export class AppComponent implements AfterViewInit {
   weather: any;
+  loading = true;
   @ViewChild('mapElement') mapElement: ElementRef;
   @ViewChild('inputElement') inputElement: ElementRef;
 
@@ -68,6 +69,7 @@ export class AppComponent implements AfterViewInit {
           this.weather = r;
           console.log(this.weather);
             this.cdRef.detectChanges();
+
         });
 
         this.map.setZoom(13);
@@ -76,6 +78,7 @@ export class AppComponent implements AfterViewInit {
           lng: location.lng()
         });
       });
+      this.loading = false;
     });
   }
 }

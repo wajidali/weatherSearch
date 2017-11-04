@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 import {GoogleMapsModule} from 'google-maps-angular2';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SpinnerComponent } from './spinner/spinner.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
