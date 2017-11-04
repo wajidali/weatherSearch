@@ -1,0 +1,26 @@
+<input type="text" class="input" placeholder="Address..." #inputElement>
+<div class="map" #mapElement ></div>
+
+<div class="col-sm-6 row" >
+  <table class="table" *ngIf="weather">
+    <thead>
+    <tr>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th>Average Temperature ° Kelvin</th>
+      <th *ngFor="let source of weather.weatherSources">{{source.sourceName}} Current Temperature ° Kelvin</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>{{weather.latitude}} 24</td>
+      <td>{{weather.longitude}}</td>
+      <td>{{weather.averageTemperature.kelvin}}</td>
+      <td *ngFor="let source of weather.weatherSources">{{source.currentTemperature.kelvin }}</td>
+    </tr>
+    <tr>
+
+    </tr>
+    </tbody>
+  </table>
+</div>
